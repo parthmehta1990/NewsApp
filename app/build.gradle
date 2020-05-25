@@ -17,12 +17,20 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "API_KEY", API_KEY)
+        buildConfigField("String", "BaseUrl", BaseUrl)
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        /*
+        Either you can add here or in default config
+        debug{
+            buildConfigField "String", "API_KEY", API_KEY
+        }*/
     }
 
     compileOptions {
@@ -32,6 +40,8 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+
+
 
 }
 
